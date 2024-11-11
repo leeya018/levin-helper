@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Upload, X } from "lucide-react";
+import Image from "next/image";
 
 export default function ShiftsComponent() {
   const [shiftImage, setShiftImage] = useState<string | null>(null);
@@ -58,9 +59,12 @@ export default function ShiftsComponent() {
           {shiftImage ? (
             <div className="space-y-4">
               <div className="aspect-video relative">
-                <img
+                <Image
                   src={shiftImage}
                   alt="לוח משמרות"
+                  layout="responsive"
+                  width={500} // Set a reasonable width based on your layout needs
+                  height={250} // Set a reasonable height based on your layout needs
                   className="w-full h-[50vh] object-contain"
                 />
               </div>
