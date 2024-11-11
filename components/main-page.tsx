@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/button";
 
 import ShiftsComponent from "./ShiftsComponent";
 import FloorsComponent from "./FloorsComponent";
+import ProceduresComponent from "./Procedures";
 
 // Main Component
 export function MainPage() {
-  const [activeComponent, setActiveComponent] = useState<"floors" | "shifts">(
-    "floors"
-  );
+  const [activeComponent, setActiveComponent] = useState<
+    "floors" | "shifts" | "procedures"
+  >("floors");
 
   return (
     <div className="h-screen flex flex-col" dir="rtl">
@@ -28,14 +29,18 @@ export function MainPage() {
           >
             משמרות
           </Button>
+          <Button
+            variant={activeComponent === "procedures" ? "default" : "ghost"}
+            onClick={() => setActiveComponent("procedures")}
+          >
+            נהלים
+          </Button>
         </div>
       </nav>
       <main className="flex-grow overflow-hidden">
-        {activeComponent === "floors" ? (
-          <FloorsComponent />
-        ) : (
-          <ShiftsComponent />
-        )}
+        {activeComponent === "floors" && <FloorsComponent />}
+        {activeComponent === "shifts" && <ShiftsComponent />}
+        {activeComponent === "procedures" && <ProceduresComponent />}
       </main>
     </div>
   );
