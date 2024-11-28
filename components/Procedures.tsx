@@ -71,11 +71,32 @@ const procedures = [
    • מגדל סונות - מול הכניסה הראשית , לחצות כביש . המגדל מצד ימין
     `,
   },
+  {
+    id: "8",
+    title: "קוד חדר זבל",
+    description: `
+   • 2403#
+    `,
+  },
+  {
+    id: "9",
+    title: "נעילת דלתות",
+    description: `
+   • החל משעה 11 בלילה
+    `,
+  },
+  {
+    id: "10",
+    title: "נוהל יומן",
+    description: `
+   • החל משעה 9 בערב רישום ביומן של כל מי שעולה לקומות
+    `,
+  },
 ];
 
 export default function ProceduresComponent() {
   return (
-    <div className="h-full flex flex-col p-4" dir="rtl">
+    <div className="h-full flex flex-col p-4 mb-10" dir="rtl">
       <Card>
         <CardContent className="p-4">
           <h2 className="text-2xl font-bold text-center mb-4">נהלים</h2>
